@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank for Dime</title>
+    
+</head>
+
+<body>
+    <h2>Declare your preset categories in Dime!</h2>
+    <p>Select all applicable categories below. Alternatively, you can select them and create the category therafter in Dime.</p>
+    <p>To declare categories not shown below, please enter the respective categories delimited by commas!</p>
+    <p>e.g., Laundry, Self-care, Vacation</p>
+    <p>Please note that a Miscellaneous category is assumed.</p>
+
+    <form action="{{url_for('category')}}" method="post">
+        <input type="checkbox" name="categories" id="food" value="Food">
+        <label for="food">Food</label><br>
+        <input type="checkbox" name="categories" id="trans" value="Transport">
+        <label for="trans">Transport</label><br>
+        <input type="checkbox" id="other-checkbox" value="others">
+        <label for="other-checkbox">Other</label><br>
+
+        <label for="others-info" style="display: none;">Please specify:</label>
+        <textarea id="others-info" name="categories" style="display: none;"></textarea>
+        
+        <button type="Submit">Submit</button>
+    </form>
+
+    <script>
+        const othersCheckbox = document.querySelector('input[value="others"]');
+        const othersTextbox = document.getElementById('others-info');
+
+        // copied this block lol
+        othersCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                othersTextbox.style.display = 'block';
+                othersLabel.style.display = 'block';
+            } else {
+                othersTextbox.style.display = 'none';
+                othersLabel.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
