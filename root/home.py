@@ -1,7 +1,6 @@
-import flask
 from flask import Flask, request, render_template, send_file
 from io import TextIOWrapper
-import track
+from track import tracker
 
 app = Flask(__name__)
 
@@ -18,7 +17,7 @@ def upload():
             return 
         
         text_stream = TextIOWrapper(uploaded_file, encoding="utf-8")
-        track.tracker(text_stream)
+        tracker(text_stream)
 
         return render_template('download.html')
     

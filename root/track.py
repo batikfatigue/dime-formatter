@@ -1,6 +1,7 @@
 def tracker(text_stream):
     import csv
 
+    # Clears the import file and writes in the header
     header = ['Date','Note','Amount','Category','Type']
     with open('import.csv', 'w', newline='') as f:
         writer = csv.writer(f)
