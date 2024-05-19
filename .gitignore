@@ -2,3 +2,4 @@ venv/
 root/data.csv
 root/import.csv
 __pycache__
+.env
