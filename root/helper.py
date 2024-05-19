@@ -34,51 +34,52 @@ def reformatter(text_stream, categories):
                 
             
                 # this is repeated , maybe can use function
-                # if row[1] == 'INT':
-                #     note = 'Interest Earned'
-                #     category = 'Interest'
-                #     newRow = [date, note, amount, type1, category]
+                if row[1] == 'INT':
+                    note = 'Interest Earned'
+                    category = 'Interest'
+                    newRow = [date, note, amount, type1, category]
 
  
-                #     f = open(csv_path, 'a', newline='')
-                #     writer = csv.writer(f)
-                #     writer.writerow(newRow)
-                #     print(f'Row{i} done for {reference}')
-                #     i += 1
+                    f = open(csv_path, 'a', newline='')
+                    writer = csv.writer(f)
+                    writer.writerow(newRow)
+                    print(f'Row{i} done for {reference}')
+                    i += 1
 
-                #     continue
+                    continue
                     
                     
-                
+                found = False
                 # Processing references
                 # if nets qr then find the TO: 
                 if row[1] == 'MST':
-                    reference = row[5]
+                    if len(row[5]) == 19: # if credit card number
+                        reference = row[4]
+                    else:
+                        reference = row[5]
+                    if ' SI NG ' in reference:
+                        reference = reference[:-12]
                 else: 
                     reference = row[4:7]
                     dup = [k for k in reference]
-                    found = False
+                    
                     for j, ref in enumerate(dup):
-                        print(ref)
-                        if 'PayNow Transfer' in ref:
+                        if ref.startswith('PayNow Transfer'):
                             reference.remove(dup[j])
-
-                        if 'OTHR' in ref:
+                        if ref.startswith('OTHR'):
                             ref = ref[5:]
-                            misc = categoriser(categories, ref)
+                            misc, note = categoriser(categories, ref)
                             if 'Miscellaneous' in misc:
                                 reference.remove(dup[j])
                             else:
                                 category = misc
                                 found = True
                                 break
-                        print(
-                            'Checking: {}'.format(reference)
-                        )
 
                 print(reference)
                 if not found:
-                    category = categoriser(categories, reference)
+                    category, note = categoriser(categories, reference)
+                print(note)
                 print(category)
 
                 # we will let the user manually type in categories that chatgpt sort as misc, less they want to sort it as misc
@@ -111,17 +112,19 @@ def categoriser(categories, reference):
     messages=[
         {"role": "system", "content": """You are an bank transactions analyser.
                                         Categories: {}.
-                                        You pick a most suitable category from the above, according to the given transaction references.
-                                        You don't look at patterns, you focus on the names/brands.
-                                        You resort to Miscellaneous whenever there's little context.
-                                        You explain why you chose so, in a short sentence.
-                                        
-                                        """.format(categories)},
+                                        You pick the most suitable category, based off transaction references.
+                                        Don't deduce, use miscellaneous when there's little context.
+                                        Reply with one word for the category, followed by a dash, then a note of <4 words.
+                                        The note should be extracted from the references.
+                                        Format: "Category - Note".""".format(categories)},
 
         {"role": "user", "content": reference}
     ]
     )
 
-    category = completion.choices[0].message.content
+    response = completion.choices[0].message.content
+    category, note = response.split(' - ')
 
-    return category
+    return category, note
+
+
