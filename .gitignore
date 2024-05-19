@@ -1,5 +1,5 @@
 venv/
-data.csv
-import.csv
+root/data.csv
+root/import.csv
 __pycache__
 .env

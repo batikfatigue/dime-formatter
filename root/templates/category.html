@@ -10,39 +10,57 @@
 
 <body>
     <h2>Declare your preset categories in Dime!</h2>
-    <p>Select all applicable categories below. Alternatively, you can select them and create the category therafter in Dime.</p>
-    <p>To declare categories not shown below, please enter the respective categories delimited by commas!</p>
+    <p>Select all applicable categories below. Alternatively, you can select them and create the categories thereafter in Dime.</p>
+    <p>To declare categories not shown below, please submit the respective categories delimited by commas in the textbox below!</p>
     <p>e.g., Laundry, Self-care, Vacation</p>
-    <p>Please note that a Miscellaneous category is assumed.</p>
+    <p>Please note that a 'Miscellaneous' category is assumed.</p>
 
-    <form action="{{url_for('category')}}" method="post">
-        <input type="checkbox" name="categories" id="food" value="Food">
-        <label for="food">Food</label><br>
-        <input type="checkbox" name="categories" id="trans" value="Transport">
-        <label for="trans">Transport</label><br>
-        <input type="checkbox" id="other-checkbox" value="others">
-        <label for="other-checkbox">Other</label><br>
+    <form id='categoriser' action="{{url_for('category')}}" method="post">
+        <!-- Label allows users to just click on the text -->
+        <label for="food">Food</label>
+        <input type="checkbox" name="categories" id="food" value="Food"><br>
+        <label for="trans">Transport</label>
+        <input type="checkbox" name="categories" id="trans" value="Transport"><br>
+        <label for="others-checkbox">Others</label>
+        <input type="checkbox" id="others-checkbox"><br>
 
-        <label for="others-info" style="display: none;">Please specify:</label>
-        <textarea id="others-info" name="categories" style="display: none;"></textarea>
+        <textarea id="others-text" name="categories" placeholder="Laundry, Self-care, Vacation."></textarea>
+        
         
         <button type="Submit">Submit</button>
     </form>
 
     <script>
-        const othersCheckbox = document.querySelector('input[value="others"]');
-        const othersTextbox = document.getElementById('others-info');
+            const form = document.getElementById('categoriser');
+            const othersCheckbox = document.getElementById('others-checkbox');
+            const othersTextbox = document.getElementById('others-text');
 
-        // copied this block lol
-        othersCheckbox.addEventListener('change', function() {
-            if (this.checked) {
-                othersTextbox.style.display = 'block';
-                othersLabel.style.display = 'block';
-            } else {
-                othersTextbox.style.display = 'none';
-                othersLabel.style.display = 'none';
-            }
-        });
+            // Toggles text area on and off according to checkbox
+            // Disables text area to prevent unintended additional list item
+            othersTextbox.disabled = true;
+            othersTextbox.style.display = 'none';
+            othersCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    othersTextbox.disabled = false;
+                    othersTextbox.style.display = 'block';
+                } else {
+                    othersTextbox.disabled = true;
+                    othersTextbox.style.display = 'none';
+                    
+                }
+            });
+            
+            form.addEventListener('submit', (event) => {
+            // Check if the checkbox is checked and the textarea is empty
+            console.log(othersTextbox.value.trim())
+            if (othersCheckbox.checked && othersTextbox.value.trim() === '') {
+                // Prevent the form from submitting
+                event.preventDefault();
+                alert('Please enter other categories. Else, uncheck "Others".');
+                othersTextbox.focus();
+                }
+            });
+
     </script>
 
 </body>
