@@ -12,6 +12,7 @@ To use:
 - download the formatted file
 - import file to Dime
 
+P.S. Dime's 'Type' support for importing files is suspended (all of your transactions will be classified as expenses and you'll have to manually change it to income)
 P.S. Only works with POSB bank statements
 
 How to download your CSV bank statetements:
