@@ -9,7 +9,7 @@ app = Flask(__name__)
 def upload():
     if request.method == 'POST':
         # Assume valid file input
-        categories = request.args.getlist('categories')
+        categories = request.form.getlist('categories')
     
         uploaded_file = request.files.get('fileInput')
         text_stream = TextIOWrapper(uploaded_file, encoding="utf-8")

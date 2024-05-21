@@ -87,7 +87,7 @@ def reformatter(text_stream, categories):
                 newRow = [date, note, amount, type1, category]
 
 
-                f = open(csv_path, 'a', newline='')
+                f = open(csv_path, 'a', newline='', encoding='utf-8', errors='ignore')
                 writer = csv.writer(f)
                 writer.writerow(newRow)
                 print(f'Row{i} done')
