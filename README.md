@@ -13,6 +13,7 @@ To use:
 - import file to Dime
 
 P.S. Only works with POSB bank statements
+
 How to download your CSV bank statetements:
 - Log in to POSB internet banking
 - Complete the Authentication Process.
