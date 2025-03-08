@@ -37,7 +37,7 @@ def reformatter(text_stream, categories):
                 if row[1] == 'INT':
                     note = 'Interest Earned'
                     category = 'Interest'
-                    newRow = [date, note, amount, type1, category]
+                    newRow = [date, note, amount, category, type1]
 
  
                     f = open(csv_path, 'a', newline='')
@@ -84,7 +84,7 @@ def reformatter(text_stream, categories):
 
                 # we will let the user manually type in categories that chatgpt sort as misc, less they want to sort it as misc
 
-                newRow = [date, note, amount, type1, category]
+                newRow = [date, note, amount, category, type1]
 
 
                 f = open(csv_path, 'a', newline='', encoding='utf-8', errors='ignore')
