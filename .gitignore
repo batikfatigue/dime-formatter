@@ -2,5 +2,5 @@ venv/
 root/data.csv
 root/import.csv
 __pycache__
-.env
+**/.env
 root/templates/cleanup.html

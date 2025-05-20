@@ -97,8 +97,10 @@ def reformatter(text_stream, categories):
 # returns a category
 def categoriser(categories, reference): 
     from openai import OpenAI
+    import os, dotenv
 
-    client = OpenAI()
+    dotenv.load_dotenv()
+    client = OpenAI(api_key=os.environ("OPEN_API_KEY"))
 
     categories = categories + ['Miscellaneous']
     reference = '[' + ', '.join(map(repr, reference)) + ']'
@@ -108,7 +110,7 @@ def categoriser(categories, reference):
     # reference = 'iCloud Subscription'
 
     completion = client.chat.completions.create(
-    model="gpt-3.5-turbo",
+    model="gpt-4o-mini-2024-07-18",
     messages=[
         {"role": "system", "content": """You are an bank transactions analyser.
                                         Categories: {}.
