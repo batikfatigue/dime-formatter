@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, send_file
 from io import TextIOWrapper
-from app.helper import reformatter
+from helper import reformatter
 
 app = Flask(__name__)
 
