@@ -1,20 +1,21 @@
 # Dime Formatter
 This app auto formats your bank csv statements into an import-ready file for Dime, a money tracking app.
-Uses OpenAI's API to auto-categorise your bank transactions.
-For increased accuracy in auto-categorising, upgrade your model to gpt-4, and replace model in line 111 of helper.py to 'gpt-4o'/'gpt-4'.
+Uses OpenAI's API to auto-categorise your bank transactions. 
+Default model used: 'GPT 4.1'
 
 To use:
 - Create an API Key at https://platform.openai.com/api-keys
 - Tutorial: https://platform.openai.com/docs/quickstart/step-2-set-up-your-api-key
+- Rename .env.example to .env
 - Paste your API key in .env
-- run home.py (in root/)
+- run app.py (in dime-formatter/)
 - upload your POSB bank statement (in csv format only!)
 - download the formatted file
 - import file to Dime
 
-P.S. Dime's 'Type' support for importing files is suspended (all of your transactions will be classified as expenses and you'll have to manually change it to income)
+Dependencies: Run 'pip install -r requirements.txt' in the terminal
 
-Only works with POSB bank statements
+Current, only works with POSB bank statements
 
 How to download your CSV bank statetements:
 - Log in to POSB internet banking

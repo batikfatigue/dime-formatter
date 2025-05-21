@@ -100,7 +100,7 @@ def categoriser(categories, reference):
     import os, dotenv
 
     dotenv.load_dotenv()
-    client = OpenAI(api_key=os.environ("OPEN_API_KEY"))
+    client = OpenAI(api_key=os.environ("OPENAI_API_KEY"))
 
     categories = categories + ['Miscellaneous']
     reference = '[' + ', '.join(map(repr, reference)) + ']'
@@ -110,7 +110,7 @@ def categoriser(categories, reference):
     # reference = 'iCloud Subscription'
 
     completion = client.chat.completions.create(
-    model="gpt-4o-mini-2024-07-18",
+    model="pt-4.1-nano-2025-04-14",
     messages=[
         {"role": "system", "content": """You are an bank transactions analyser.
                                         Categories: {}.

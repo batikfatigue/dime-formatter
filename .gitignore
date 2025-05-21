@@ -1,6 +1,3 @@
 venv/
-root/data.csv
-root/import.csv
-__pycache__
-root/templates/cleanup.html
-root/.env
+dime-formatter/.env
+.DS_Store
