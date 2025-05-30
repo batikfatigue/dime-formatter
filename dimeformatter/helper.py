@@ -15,7 +15,7 @@ def formatter_dbs(text_stream, categories):
         cursor = conn.cursor()
     
     # Reformat CSV
-    with text_stream as import_file, open('export_path', mode='a', encoding='utf-8') as export_file:
+    with text_stream as import_file, open(export_path, mode='a', encoding='utf-8') as export_file:
         data = csv.reader(import_file)
         writer = csv.writer(export_file)
         i = 1
@@ -26,7 +26,7 @@ def formatter_dbs(text_stream, categories):
             elif row[0][0].isnumeric(): 
                 # Index 1: tnCode, Index 2: Expense, Index 3: Income, Index 4,5,6: TnReference
                 tn_code = row[1]
-                references = row[4,5,6]
+                references = row[4:7]
                 print(references)
                 # Check income or expense
                 date = row[0]
@@ -54,12 +54,17 @@ def formatter_dbs(text_stream, categories):
                     i += 1
                     continue
                 
-                    
                 found = False
                 if row[1] in ['MST', 'UPI', 'UMC', 'UMC-S']:
                     references = [x for x in references if not re.search(r'\d{4}-\d{4}-\d{4}-\d{4}', x)]
-                    if ' SI NG ' in reference: # review this it can also be SI SGP
-                        reference = reference[:-12]
+                    ''' 
+                    No data for country codes. Can't assume country codes based on limited data
+                    AI will have to decipher what is the country code. Then search the store 
+                    based on the country code. Need to decide if worth tokens NOT WORTH BECAUSE THE COUNTRY CODE NOT SURE
+                    Some transactions are so long they skip the country code and jump straight to date
+                    Some country code isn't obvious. Like St Swe for Spotify.
+                    We should probably include transaction amount.
+                    '''
                 else: 
                     reference = row[4:7]
                     dup = [k for k in reference]
