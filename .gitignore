@@ -2,3 +2,5 @@ venv/
 dimeformatter/.env
 .DS_Store
 .vscode/
+tests/datasets
+dimeformatter/__pycache__
