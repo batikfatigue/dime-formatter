@@ -1,9 +1,10 @@
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file, session
 from io import TextIOWrapper
-from helper import formatter_dbs
+from helper import formatter_dbs, validate_csv
 import sqlite3
 
 app = Flask(__name__)
+# app.secret_key = 'your-secret-key'
 
 # To display all transaction codes
 def tn_codes():
@@ -25,7 +26,8 @@ def tn_codes():
 
     # Close connection
     conn.close()
-tn_codes()
+ 
+#tn_codes()
 
 @app.route('/', methods=['POST', 'GET'])
 def upload():
@@ -34,13 +36,15 @@ def upload():
         categories = request.form.getlist('categories')
         uploaded_file = request.files.get('fileInput')
         
+        is_valid, message = validate_csv(uploaded_file)
+        if not is_valid:
+            return render_template('file.html', error=message, categories=categories)
+        
         
         text_stream = TextIOWrapper(uploaded_file, encoding="utf-8")
-        
         formatter_dbs(text_stream, categories)
 
         return render_template('download.html')
-    
     else:
         return render_template('index.html')
 
