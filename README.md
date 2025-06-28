@@ -1,21 +1,45 @@
-# Dime Formatter
-This app auto formats your bank csv statements into an import-ready file for Dime, a money tracking app.
-Uses OpenAI's API to auto-categorise your bank transactions. 
-Default model used: 'GPT 4.1'
+# DimePrep
+This app auto formats your bank CSV statements into an import-ready file for Dime, a money tracking app.
+Uses Google Gemini 2.5-flash to auto-categorise your bank transactions with batch processing for efficiency.
+Features a modern React TSX landing page built with shadcn/ui components.
 
-To use:
-- Create an API Key at https://platform.openai.com/api-keys
-- Tutorial: https://platform.openai.com/docs/quickstart/step-2-set-up-your-api-key
-- Rename .env.example to .env
-- Paste your API key in .env
-- run app.py (in dime-formatter/)
-- upload your POSB bank statement (in csv format only!)
-- download the formatted file
-- import file to Dime
+## Setup
 
-Dependencies: Run 'pip install -r requirements.txt' in the terminal
+### Install Dependencies
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
 
-Current, only works with POSB bank statements
+# Install Node.js dependencies for React frontend
+npm install
+```
+
+### Configure API Key
+- Create a Gemini API Key at https://aistudio.google.com/app/apikey
+- Rename `dimeformatter/.env.example` to `dimeformatter/.env`
+- Add your API key: `GEMINI_API_KEY=your_key_here`
+
+### Build Frontend
+```bash
+# Build React TSX landing page
+npm run build
+```
+
+### Run Application
+```bash
+# Start Flask development server
+cd dimeformatter
+python app.py
+```
+
+## Usage
+1. Visit the modern DimePrep landing page
+2. Click "Start formatting" to select your expense/income categories
+3. Upload your POSB bank statement (CSV format only)
+4. Download the formatted file
+5. Import file to Dime
+
+Currently only works with POSB bank statements.
 
 How to download your CSV bank statetements:
 - Log in to POSB internet banking

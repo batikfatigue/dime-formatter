@@ -11,7 +11,7 @@ def formatter_dbs(text_stream, categories):
         writer = csv.writer(f)
         writer.writerow(header)
 
-    conn = sqlite3.connect('dimeformatter/dbs_code.db')
+    conn = sqlite3.connect('dimeformatter/dbs_codes.db')
     cursor = conn.cursor()
     
     # Reformat CSV
@@ -188,14 +188,16 @@ def formatter_dbs(text_stream, categories):
                     'type': tx_type
                 })
                 reference_data.append([tx_date, tx_amt, tx_nature])
-                categories = categories + ['Miscellaneous']
+        
 
+        categories = categories + ['Miscellaneous']
+        print(categories)
         statement = json.loads(gemini_sorter(categories, payload_data))
         print(statement)
 
         f = open(export_path, 'a', newline='', encoding='utf-8', errors='ignore')
         for i, j in zip(statement, reference_data):
-            newRow = [j[0], i['Reasoning'], j[1], i['category'], j[2]]
+            newRow = [j[0], i['note'], j[1], i['category'], j[2]]
             writer.writerow(newRow)
         conn.close()
         
@@ -216,20 +218,17 @@ def gemini_sorter(categories, tx_data):
                 "type": "string",
                 "enum": categories
             },
-            "Reasoning": {
+            "note": {
                 "type": "string"
             },
             "alt_category": {
                 "type": "string"
             }
             },
-            "required": ["category","Reasoning"]
+            "required": ["category","note"]
         }
         }
     
-    grounding_tool = types.Tool(
-        google_search=types.GoogleSearch()
-    )
     
     response = client.models.generate_content(
         model="gemini-2.5-flash",
@@ -242,13 +241,12 @@ def gemini_sorter(categories, tx_data):
                 "3. up to three transaction references, "
                 "4. and transaction type. "
                 "For each transaction, provide the `category` from the allowed list and "
-                "a brief `Reasoning` (5 to 20 words)"
+                "a brief `Note` (3 words)"
                 "If category is miscellaneous, provide an `alt_category` (1 word). "
                 "Ignore any irrelevant noise in the transaction notes."
                 ),
                 response_mime_type="application/json",
-                response_schema = response_schema,
-                tools = [grounding_tool]
+                response_schema = response_schema
         ),
         contents=json.dumps(tx_data),
         

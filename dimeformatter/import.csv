@@ -1,52 +1,86 @@
 Date,Note,Amount,Category,Type
-26 May 2025,Transaction references clearly indicate BUS/MRT fare for public transport.,1.93,Transport,Expense
-25 May 2025,"Incoming PayNow transfer from an individual, likely a personal reimbursement.",37.80,Miscellaneous,Income
-25 May 2025,Incoming funds transfer from an unknown source to a specific account.,76.96,Miscellaneous,Income
-25 May 2025,"Outgoing PayNow transfer to a religious organisation, likely a donation.",200.00,Miscellaneous,Expense
-24 May 2025,Transaction reference 'TRANSIT' indicates public transport fare.,20.00,Transport,Expense
-23 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",1060.00,Miscellaneous,Expense
-22 May 2025,"Debit card transaction at a drinks stall, indicating food or beverage purchase.",2.40,Food,Expense
-22 May 2025,"Debit card transaction at a food stall (East Coast Lagoon), indicating a meal.",8.50,Food,Expense
-22 May 2025,"Debit card transaction at a hotel, likely for accommodation or hotel services.",9.50,Miscellaneous,Expense
-22 May 2025,Incoming PayNow transfer from an individual with a general note.,10.00,Miscellaneous,Income
-22 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",10.00,Miscellaneous,Expense
-21 May 2025,"Debit card transaction at a retail outlet, indicating shopping.",7.36,Miscellaneous,Expense
-21 May 2025,"Debit card transaction at a hotel, likely for accommodation or hotel services.",6.68,Miscellaneous,Expense
-20 May 2025,Transaction references clearly indicate BUS/MRT fare for public transport.,1.29,Transport,Expense
-20 May 2025,"Incoming PayNow transfer from an individual, likely a personal reimbursement.",15.00,Miscellaneous,Income
-20 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",7.00,Miscellaneous,Expense
-19 May 2025,"Debit card transaction at a hawker stall, indicating food purchase.",7.40,Food,Expense
-19 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",15.70,Miscellaneous,Expense
-17 May 2025,"Debit card transaction at a food court (Rasapura), indicating food purchase.",3.20,Food,Expense
-14 May 2025,"Debit card transaction at Decathlon, a sports retail store.",130.50,Miscellaneous,Expense
-14 May 2025,"Debit card transaction at Uniqlo, a clothing retail store.",59.80,Miscellaneous,Expense
-14 May 2025,"Debit card transaction at Chagee, a beverage outlet.",9.25,Food,Expense
-14 May 2025,"Incoming PayNow transfer from an individual, likely a personal reimbursement.",15.60,Miscellaneous,Income
-14 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",46.80,Miscellaneous,Expense
-13 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",9.00,Miscellaneous,Expense
-12 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",39.00,Miscellaneous,Expense
-10 May 2025,"Debit card transaction at ActionCity, a retail store for collectibles.",18.90,Miscellaneous,Expense
-10 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",22.80,Miscellaneous,Expense
-09 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",3.80,Miscellaneous,Expense
-09 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",14.00,Miscellaneous,Expense
-08 May 2025,Transaction references clearly indicate BUS/MRT fare for public transport.,2.47,Transport,Expense
-08 May 2025,"Incoming PayNow transfer from an individual, likely a personal reimbursement.",10.25,Miscellaneous,Income
-07 May 2025,"Incoming PayNow transfer with unclear references, likely general income.",279.50,Miscellaneous,Income
-06 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",13.00,Miscellaneous,Expense
-04 May 2025,"Incoming PayNow transfer from an individual, likely a personal income.",10.00,Miscellaneous,Income
-04 May 2025,"Funds transfer to PayLah, an e-wallet top-up.",3.80,Miscellaneous,Expense
-04 May 2025,"Funds transfer to PayLah, an e-wallet top-up.",10.00,Miscellaneous,Expense
-01 May 2025,"Incoming PayNow transfer from an individual, likely a personal income.",150.00,Miscellaneous,Income
-01 May 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",36.25,Miscellaneous,Expense
-30 Apr 2025,"Funds transfer to PayLah, an e-wallet top-up.",6.00,Miscellaneous,Expense
-30 Apr 2025,"Funds transfer to PayLah, an e-wallet top-up.",2.10,Miscellaneous,Expense
-30 Apr 2025,"Debit card transaction at Popular Book Company, indicating books or stationery purchase.",3.60,Miscellaneous,Expense
-30 Apr 2025,"Funds transfer to PayLah, an e-wallet top-up.",3.80,Miscellaneous,Expense
-30 Apr 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",5.36,Miscellaneous,Expense
-29 Apr 2025,"Funds transfer to PayLah, an e-wallet top-up.",2.00,Miscellaneous,Expense
-29 Apr 2025,"Funds transfer to PayLah, an e-wallet top-up.",5.50,Miscellaneous,Expense
-29 Apr 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",9.50,Miscellaneous,Expense
-29 Apr 2025,"Outgoing PayNow transfer to an individual, likely a personal transfer.",5.00,Miscellaneous,Expense
-28 Apr 2025,"Funds transfer to PayLah, an e-wallet top-up.",2.00,Miscellaneous,Expense
-28 Apr 2025,"Point-of-Sale transaction for Ban Mian / Fish Soup, indicating a meal.",3.80,Food,Expense
-28 Apr 2025,"PayNow transaction to 'Qashier-FOOD HAVEN NTU', indicating food purchase.",2.10,Food,Expense
+22 May 2025,Bank Transfer Out,300.00,Miscellaneous,Expense
+22 May 2025,Incoming PayNow transfer,300.00,Miscellaneous,Income
+21 May 2025,Public transport fare,2.38,Transport,Expense
+21 May 2025,Public transport fare,6.35,Transport,Expense
+21 May 2025,Tenderbest meal purchase,8.20,Food,Expense
+19 May 2025,Public transport fare,4.48,Transport,Expense
+18 May 2025,Tenderbest meal purchase,8.20,Food,Expense
+18 May 2025,Payment to vendor,6.32,Miscellaneous,Expense
+17 May 2025,Public transport fare,1.19,Transport,Expense
+17 May 2025,Public transport fare,2.58,Transport,Expense
+16 May 2025,Public transport fare,3.57,Transport,Expense
+16 May 2025,Public transport fare,5.07,Transport,Expense
+16 May 2025,Jia Jia meal,7.00,Food,Expense
+16 May 2025,Payment to AllDebit,7.38,Miscellaneous,Expense
+16 May 2025,Driving lesson payment,200.00,Transport,Expense
+16 May 2025,Incoming PayNow transfer,300.00,Miscellaneous,Income
+16 May 2025,Driving lesson payment,10.00,Transport,Expense
+16 May 2025,Food purchase Ubi,1.70,Food,Expense
+16 May 2025,Food purchase Ubi,4.50,Food,Expense
+16 May 2025,PayNow to David,1.40,Miscellaneous,Expense
+15 May 2025,PayNow to Justin,10.00,Miscellaneous,Expense
+15 May 2025,Payment to vendor,2.40,Miscellaneous,Expense
+14 May 2025,Henry's Kitchen meal,5.60,Food,Expense
+14 May 2025,Incoming transfer OTHR,60.24,Miscellaneous,Income
+14 May 2025,Bank Transfer Out,70.00,Miscellaneous,Expense
+14 May 2025,PayNow to David,3.50,Miscellaneous,Expense
+13 May 2025,Apple service payment,4.09,Subscription,Expense
+13 May 2025,Public transport fare,1.40,Transport,Expense
+13 May 2025,Public transport fare,1.19,Transport,Expense
+13 May 2025,Jia Jia meal,7.50,Food,Expense
+13 May 2025,PayNow to Ck,8.30,Miscellaneous,Expense
+12 May 2025,Bank Transfer Out,268.00,Miscellaneous,Expense
+12 May 2025,Incoming transfer OTHR,299.88,Miscellaneous,Income
+11 May 2025,Bak Chor Mee,5.10,Food,Expense
+10 May 2025,Public transport fare,1.89,Transport,Expense
+09 May 2025,Public transport fare,3.66,Transport,Expense
+09 May 2025,Driving lesson payment,10.00,Transport,Expense
+09 May 2025,Driving lesson payment,100.00,Transport,Expense
+09 May 2025,Food court meal,1.70,Food,Expense
+09 May 2025,PayNow to Justin,5.00,Miscellaneous,Expense
+09 May 2025,Payment to AllDebit,6.90,Miscellaneous,Expense
+08 May 2025,Mobile plan payment,20.38,Subscription,Expense
+08 May 2025,Public transport fare,1.19,Transport,Expense
+08 May 2025,Public transport fare,1.29,Transport,Expense
+08 May 2025,Eighty Degrees payment,3.90,Food,Expense
+08 May 2025,PayNow to Justin,20.00,Miscellaneous,Expense
+08 May 2025,Bak Chor Mee,10.20,Food,Expense
+08 May 2025,Singapore Police payment,25.00,Miscellaneous,Expense
+07 May 2025,Tenderbest meal purchase,8.20,Food,Expense
+07 May 2025,Jia Jia meal,7.20,Food,Expense
+06 May 2025,Spotify subscription fee,18.48,Subscription,Expense
+06 May 2025,Public transport fare,1.29,Transport,Expense
+06 May 2025,Henry's Kitchen meal,5.30,Food,Expense
+05 May 2025,Public transport fare,1.19,Transport,Expense
+05 May 2025,Incoming PayNow transfer,75.00,Miscellaneous,Income
+05 May 2025,PayNow to Lee,75.00,Miscellaneous,Expense
+05 May 2025,Henry's Kitchen meal,3.60,Food,Expense
+05 May 2025,PayNow to David,3.50,Miscellaneous,Expense
+04 May 2025,PayNow to Anas,10.00,Miscellaneous,Expense
+04 May 2025,Outgoing PayNow transfer,70.00,Miscellaneous,Expense
+03 May 2025,PayNow to Ck,5.00,Miscellaneous,Expense
+03 May 2025,Jia Jia meal,7.20,Food,Expense
+03 May 2025,Incoming PayNow transfer,300.00,Miscellaneous,Income
+02 May 2025,Public transport fare,1.29,Transport,Expense
+02 May 2025,Payment to AllDebit,6.96,Miscellaneous,Expense
+02 May 2025,Incoming PayNow transfer,9.24,Miscellaneous,Income
+02 May 2025,Income Spotify share,9.50,Miscellaneous,Income
+30 Apr 2025,Bank interest earned,0.01,Miscellaneous,Income
+30 Apr 2025,Public transport fare,1.19,Transport,Expense
+30 Apr 2025,Public transport fare,7.35,Transport,Expense
+30 Apr 2025,Payment to AllDebit,1.82,Miscellaneous,Expense
+30 Apr 2025,Payment to AllDebit,1.82,Miscellaneous,Expense
+29 Apr 2025,Apple service payment,30.82,Subscription,Expense
+29 Apr 2025,Public transport fare,1.29,Transport,Expense
+29 Apr 2025,CS246 food purchase,2.00,Food,Expense
+29 Apr 2025,Jia Jia meal,7.00,Food,Expense
+28 Apr 2025,Tenderbest meal purchase,9.20,Food,Expense
+26 Apr 2025,Public transport fare,1.19,Transport,Expense
+25 Apr 2025,Public transport fare,4.82,Transport,Expense
+24 Apr 2025,PayNow to Isaac,12.00,Miscellaneous,Expense
+24 Apr 2025,Incoming PayNow transfer,200.00,Miscellaneous,Income
+24 Apr 2025,Outgoing PayNow transfer,4.00,Miscellaneous,Expense
+24 Apr 2025,Lai Yuan meal,5.90,Food,Expense
+24 Apr 2025,PayNow to David,3.40,Miscellaneous,Expense
+23 Apr 2025,Public transport fare,2.48,Transport,Expense

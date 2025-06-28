@@ -53,7 +53,6 @@ def upload():
 def category():
     if request.method == 'POST':
         categories = request.form.getlist('categories') 
-        print(categories)
 
         # categoriser(categories, reference)
         # this function will return the category from a prompt
