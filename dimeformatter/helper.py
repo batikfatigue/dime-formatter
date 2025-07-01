@@ -11,7 +11,7 @@ def formatter_dbs(text_stream, categories):
         writer = csv.writer(f)
         writer.writerow(header)
 
-    conn = sqlite3.connect('dimeformatter/dbs_codes.db')
+    conn = sqlite3.connect('dbs_codes.db')
     cursor = conn.cursor()
     
     # Reformat CSV
